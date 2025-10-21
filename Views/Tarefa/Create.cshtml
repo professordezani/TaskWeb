@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    <body class="container">
+        <h1>Nova Tarefa</h1>
+        <form action="/tarefa/create" method="POST">
+            <input name="Title" class="form-control"/>
+            <br/>
+            <select name="TagId" class="form-control">
+                @foreach(var tag in ViewBag.Tags) { 
+                    <option value="@tag.TagId">@tag.Title</option>
+                }
+            </select>
+            <br/>
+            <button class="btn btn-primary">Salvar</button>
+        </form>
+    </body>
+</html>
